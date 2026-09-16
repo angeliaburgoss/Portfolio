@@ -1,0 +1,36 @@
+export const translations = {
+  sv: {
+    work: 'Projekt',
+    contact: 'Kontakt',
+    contactHeading: 'Kontakta mig',
+    contactIntro:
+      'Vill du samarbeta eller höra mer om ett projekt? Hör av dig gärna.',
+    emailLabel: 'E-post',
+    linkedinLabel: 'LinkedIn',
+    githubLabel: 'GitHub',
+    projectYear: 'År',
+    projectRole: 'Roll',
+    projectTools: 'Verktyg',
+    backToWork: '← Tillbaka till projekt',
+    languageToggleLabel: 'Switch language to English',
+    projectNotFound: 'Projektet kunde inte hittas.',
+    imagePlaceholderNote: 'Platshållarbild',
+  },
+  en: {
+    work: 'Work',
+    contact: 'Contact',
+    contactHeading: 'Get in touch',
+    contactIntro:
+      'Interested in collaborating or hearing more about a project? Feel free to reach out.',
+    emailLabel: 'Email',
+    linkedinLabel: 'LinkedIn',
+    githubLabel: 'GitHub',
+    projectYear: 'Year',
+    projectRole: 'Role',
+    projectTools: 'Tools',
+    backToWork: '← Back to work',
+    languageToggleLabel: 'Byt språk till svenska',
+    projectNotFound: 'Project could not be found.',
+    imagePlaceholderNote: 'Placeholder image',
+  },
+}
