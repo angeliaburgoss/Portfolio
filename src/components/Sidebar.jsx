@@ -9,6 +9,10 @@ function navLinkClass({ isActive }) {
   return isActive ? 'nav-link active' : 'nav-link'
 }
 
+const nameWords = social.name.split(' ')
+const nameFirstLine = nameWords.slice(0, -1).join(' ')
+const nameSecondLine = nameWords[nameWords.length - 1]
+
 export default function Sidebar() {
   const { t, lang, toggleLang } = useLanguage()
   const { pathname } = useLocation()
@@ -21,7 +25,11 @@ export default function Sidebar() {
         <NavLink to="/" className="site-name-link">
           <img src={brandMark} alt="" className="brand-mark" />
           <span>
-            <span className="site-name">{social.name}</span>
+            <span className="site-name">
+              {nameFirstLine}
+              <br />
+              {nameSecondLine}
+            </span>
             <span className="site-title">{social.title}</span>
           </span>
         </NavLink>
