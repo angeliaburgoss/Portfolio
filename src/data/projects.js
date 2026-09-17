@@ -20,6 +20,12 @@ function placeholderProcess() {
   }))
 }
 
+// Kort platshållartext ovanför designprocess-ikonerna — byt ut per projekt.
+const processIntro = {
+  sv: 'Kort beskrivning av designprocessen för det här projektet kommer här. Ersätt med din egen text.',
+  en: 'A short description of the design process for this project goes here. Replace with your own text.',
+}
+
 // Platshållarprojekt — lägg till fler objekt i den här listan för att lägga
 // till nya projekt på sidan. Byt ut `image` mot en riktig bild när du har en.
 export const projects = [
@@ -29,6 +35,7 @@ export const projects = [
     year: '2026',
     tools: ['Verktyg 1', 'Verktyg 2'],
     process: placeholderProcess(),
+    processIntro,
     sv: {
       title: 'Projekt 1',
       role: 'Din roll',
@@ -48,6 +55,7 @@ export const projects = [
     year: '2026',
     tools: ['Verktyg 1', 'Verktyg 2'],
     process: placeholderProcess(),
+    processIntro,
     sv: {
       title: 'Projekt 2',
       role: 'Din roll',
@@ -67,6 +75,7 @@ export const projects = [
     year: '2026',
     tools: ['Verktyg 1', 'Verktyg 2'],
     process: placeholderProcess(),
+    processIntro,
     sv: {
       title: 'Projekt 3',
       role: 'Din roll',
@@ -86,6 +95,7 @@ export const projects = [
     year: '2026',
     tools: ['Verktyg 1', 'Verktyg 2'],
     process: placeholderProcess(),
+    processIntro,
     sv: {
       title: 'Projekt 4',
       role: 'Din roll',

@@ -83,15 +83,28 @@ h2 {
   gap: 40px;
 }
 
+.site-name-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .site-name {
-  display: block;
   font-size: 22px;
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--text-h);
-  text-decoration: none;
 }
 
 .main-nav {
@@ -295,6 +308,12 @@ h2 {
 
 .project-description {
   font-size: 17px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.process-intro {
+  font-size: 16px;
   line-height: 1.7;
   margin: 0;
 }

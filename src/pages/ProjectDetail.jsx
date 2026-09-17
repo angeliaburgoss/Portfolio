@@ -56,6 +56,8 @@ export default function ProjectDetail() {
 
       {project.process?.length > 0 && (
         <>
+          <p className="process-intro">{project.processIntro[lang]}</p>
+
           <ProcessNav steps={project.process} />
 
           <div className="process-sections">
