@@ -221,9 +221,7 @@ h2 {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
   gap: 24px;
-  text-align: center;
 }
 
 .back-link {
@@ -247,12 +245,12 @@ h2 {
 
 .project-detail h1 {
   font-size: 32px;
+  text-align: center;
 }
 
 .project-meta {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 32px;
   margin: 0;
   padding: 20px 0;
@@ -287,7 +285,6 @@ h2 {
 .process-nav {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 20px;
   padding: 8px 0 4px;
 }
@@ -347,6 +344,7 @@ h2 {
 
 .process-section h2 {
   font-size: 22px;
+  text-align: center;
   margin-bottom: 10px;
 }
 
