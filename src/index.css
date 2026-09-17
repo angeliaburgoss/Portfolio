@@ -1,22 +1,35 @@
 :root {
-  --text: #4a4750;
-  --text-h: #0a0a0c;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --tile-bg: #f4f3f5;
-  --accent: #863bff;
-  --accent-bg: rgba(134, 59, 255, 0.08);
+  --text: #fff;
+  --text-h: #fff;
+  --bg: #1e1e1e;
+  --border: #3a3a3a;
+  --tile-bg: #2a2a2a;
+  --accent: #b892ff;
+  --accent-bg: rgba(184, 146, 255, 0.12);
 
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   font: 17px/1.55 var(--sans);
-  color-scheme: light;
+  color-scheme: dark;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Individuella projektsidor har ett ljust tema — se App.jsx, som lägger
+   klassen på baserat på route (/projekt/:slug). */
+.layout.project-theme {
+  --text: #1e1e1e;
+  --text-h: #1e1e1e;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --tile-bg: #f4f3f5;
+  --accent: #863bff;
+  --accent-bg: rgba(134, 59, 255, 0.08);
+  color-scheme: light;
 }
 
 * {
@@ -42,6 +55,10 @@ h2 {
 .layout {
   display: flex;
   min-height: 100vh;
+  background: var(--bg);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Sidebar */
