@@ -100,7 +100,7 @@ h2 {
 
 .site-name {
   display: block;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -111,7 +111,7 @@ h2 {
 .site-title {
   display: block;
   margin-top: 4px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--text);
 }
@@ -124,7 +124,7 @@ h2 {
 
 .nav-link {
   align-self: flex-start;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -155,7 +155,7 @@ h2 {
   gap: 6px;
   align-self: flex-start;
   font: inherit;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--text);
@@ -172,7 +172,7 @@ h2 {
 }
 
 .lang-toggle svg {
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .social-icons {
@@ -198,8 +198,8 @@ h2 {
 }
 
 .social-icons svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
 }
 
 /* Content */
@@ -493,7 +493,7 @@ h2 {
   }
 
   .site-name {
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .content {
