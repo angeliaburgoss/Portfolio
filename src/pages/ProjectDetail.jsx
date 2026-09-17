@@ -1,11 +1,19 @@
+import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import BackToTop from '../components/BackToTop'
+import ProcessNav from '../components/ProcessNav'
 import { useLanguage } from '../context/LanguageContext'
+import { processSteps } from '../data/processSteps'
 import { projects } from '../data/projects'
 
 export default function ProjectDetail() {
   const { slug } = useParams()
   const { t, lang } = useLanguage()
   const project = projects.find((item) => item.slug === slug)
+
+  useEffect(() => {
+    window.scrollTo({ top: 0 })
+  }, [slug])
 
   if (!project) {
     return (
@@ -19,6 +27,7 @@ export default function ProjectDetail() {
   }
 
   const content = project[lang]
+  const stepLabels = new Map(processSteps.map((step) => [step.id, step]))
 
   return (
     <article className="project-detail">
@@ -46,6 +55,31 @@ export default function ProjectDetail() {
       </dl>
 
       <p className="project-description">{content.description}</p>
+
+      {project.process?.length > 0 && (
+        <>
+          <ProcessNav steps={project.process} />
+
+          <div className="process-sections">
+            {project.process.map((step) => {
+              const stepContent = step[lang]
+              const stepMeta = stepLabels.get(step.id)
+              const Icon = stepMeta?.icon
+              return (
+                <section key={step.id} id={step.id} className="process-section">
+                  <h2 style={{ '--ball-color': stepMeta?.color }}>
+                    {Icon && <Icon aria-hidden="true" />}
+                    {stepContent.heading}
+                  </h2>
+                  <p>{stepContent.body}</p>
+                </section>
+              )
+            })}
+          </div>
+
+          <BackToTop />
+        </>
+      )}
     </article>
   )
 }

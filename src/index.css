@@ -278,6 +278,102 @@ h2 {
   margin: 0;
 }
 
+/* Design process nav ("bollarna") */
+
+.process-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 8px 0 4px;
+}
+
+.process-ball {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 84px;
+  font: inherit;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.process-ball-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid var(--ball-color);
+  color: var(--ball-color);
+  font-size: 22px;
+  background: color-mix(in srgb, var(--ball-color) 6%, var(--bg));
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.process-ball:hover .process-ball-circle,
+.process-ball:focus-visible .process-ball-circle {
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--ball-color) 16%, var(--bg));
+}
+
+.process-ball-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Design process sections */
+
+.process-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 8px;
+}
+
+.process-section h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  color: var(--ball-color, var(--text-h));
+  margin-bottom: 10px;
+}
+
+.process-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: center;
+  margin-top: 16px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  color: var(--accent);
+}
+
 /* Contact page */
 
 .contact-page {
