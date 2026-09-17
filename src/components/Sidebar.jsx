@@ -20,7 +20,10 @@ export default function Sidebar() {
       <div className="sidebar-top">
         <NavLink to="/" className="site-name-link">
           <img src={brandMark} alt="" className="brand-mark" />
-          <span className="site-name">{social.name}</span>
+          <span>
+            <span className="site-name">{social.name}</span>
+            <span className="site-title">{social.title}</span>
+          </span>
         </NavLink>
 
         <nav className="main-nav" aria-label={t.work}>
