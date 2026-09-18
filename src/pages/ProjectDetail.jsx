@@ -70,6 +70,16 @@ export default function ProjectDetail() {
                 </section>
               )
             })}
+
+            {project.extraSections?.map((extraSection) => {
+              const extraContent = extraSection[lang]
+              return (
+                <section key={extraSection.id} id={extraSection.id} className="process-section">
+                  <h2>{extraContent.heading}</h2>
+                  <p>{extraContent.body}</p>
+                </section>
+              )
+            })}
           </div>
 
           <BackToTop />
