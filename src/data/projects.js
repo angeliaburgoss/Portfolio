@@ -297,6 +297,10 @@ const project1StepOverrides = {
       },
     ],
   },
+  deliver: {
+    sv: { subheading: 'Färdig visuell identitet' },
+    en: { subheading: 'Final Visual Identity' },
+  },
 }
 
 // Avslutande avsnitt efter designprocessen — visas INTE som egna bollar i
