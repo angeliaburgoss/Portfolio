@@ -434,41 +434,65 @@ h3 {
   margin-top: 16px;
 }
 
+.process-section-figure {
+  margin: 24px 0 0;
+}
+
 .process-section-image {
   display: block;
   width: 100%;
   max-width: 640px;
-  margin: 24px auto 0;
+  margin: 0;
   border-radius: 12px;
   border: 1px solid var(--border);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
+.image-caption {
+  max-width: 640px;
+  margin: 8px 0 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
 /* Bildgalleri för projektstegen — visar bilder två i rad som standard och
    fylls på med fler rader vartefter fler bilder läggs till. Ange
-   `span: 'full'` på en galleribild (se t.ex. project1ExploreGallery i
-   src/data/projects.js) för en bred referensbild på egen rad. */
+   `span: 'full'` för en bred referensbild på egen rad, eller
+   `span: 'third'` för tre bilder på samma rad (se t.ex.
+   project1ExploreGallery i src/data/projects.js). */
 .process-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 16px;
   margin-top: 24px;
 }
 
 .process-gallery-item {
   display: block;
+  grid-column: span 3;
+  margin: 0;
+}
+
+.process-gallery-image {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   border-radius: 12px;
   border: 1px solid var(--border);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
 .process-gallery-item--full {
-  grid-column: 1 / -1;
-  object-fit: contain;
+  grid-column: span 6;
+}
+
+.process-gallery-item--full .process-gallery-image {
   background: #fff;
+}
+
+.process-gallery-item--third {
+  grid-column: span 2;
 }
 
 .zoomable-image {
@@ -635,6 +659,10 @@ h3 {
 
   .process-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .process-gallery-item {
+    grid-column: span 1;
   }
 
   .lightbox {

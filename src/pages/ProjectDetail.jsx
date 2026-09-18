@@ -115,23 +115,37 @@ export default function ProjectDetail() {
                     )
                   )}
                   {step.image && (
-                    <img
-                      src={step.image}
-                      alt=""
-                      className="process-section-image zoomable-image"
-                      {...zoomableImageProps(step.image)}
-                    />
+                    <figure className="process-section-figure">
+                      <img
+                        src={step.image.src}
+                        alt=""
+                        className="process-section-image zoomable-image"
+                        {...zoomableImageProps(step.image.src)}
+                      />
+                      {step.image.caption && (
+                        <figcaption className="image-caption">
+                          {step.image.caption[lang]}
+                        </figcaption>
+                      )}
+                    </figure>
                   )}
                   {step.gallery && (
                     <div className="process-gallery">
                       {step.gallery.map((item, index) => (
-                        <img
+                        <figure
                           key={index}
-                          src={item.src}
-                          alt=""
-                          className={`process-gallery-item zoomable-image${item.span ? ` process-gallery-item--${item.span}` : ''}`}
-                          {...zoomableImageProps(item.src)}
-                        />
+                          className={`process-gallery-item${item.span ? ` process-gallery-item--${item.span}` : ''}`}
+                        >
+                          <img
+                            src={item.src}
+                            alt=""
+                            className="process-gallery-image zoomable-image"
+                            {...zoomableImageProps(item.src)}
+                          />
+                          {item.caption && (
+                            <figcaption className="image-caption">{item.caption[lang]}</figcaption>
+                          )}
+                        </figure>
                       ))}
                     </div>
                   )}

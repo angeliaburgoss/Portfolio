@@ -10,6 +10,11 @@ import project1LogoConcept2 from '../assets/projects/project-1/logo-concept-2.pn
 import project1LogoConcept3 from '../assets/projects/project-1/logo-concept-3.png'
 import project1LogomarkFinal from '../assets/projects/project-1/logomark-final.png'
 import project1ColorPalette from '../assets/projects/project-1/color-palette.png'
+import project1TypographyHeadings from '../assets/projects/project-1/typography-headings.png'
+import project1TypographyBody from '../assets/projects/project-1/typography-body.png'
+import project1MarkColorVariants from '../assets/projects/project-1/mark-color-variants.png'
+import project1LogotypePrimaryVariants from '../assets/projects/project-1/logotype-primary-variants.png'
+import project1LogotypeSecondaryVariants from '../assets/projects/project-1/logotype-secondary-variants.png'
 import { processSteps } from './processSteps'
 
 // Kort platshållartext per steg — talar om vad avsnittet ska handla om.
@@ -134,11 +139,44 @@ const project1ExploreStep = {
 }
 
 const project1ExploreGallery = [
-  { src: project1SketchExploration },
-  { src: project1DotToMarkSteps },
-  { src: project1LogoConcept1 },
-  { src: project1LogoConcept2 },
-  { src: project1LogoConcept3 },
+  {
+    src: project1SketchExploration,
+    caption: {
+      sv: 'Skissutforskning av hur punkten skulle kunna växa och utvecklas.',
+      en: 'Sketch exploration of how the dot could grow and evolve.',
+    },
+  },
+  {
+    src: project1DotToMarkSteps,
+    caption: {
+      sv: 'Den valda riktningen, steg för steg, från punkt till färdigt märke.',
+      en: 'The chosen direction, step by step, from dot to finished mark.',
+    },
+  },
+  {
+    src: project1LogoConcept1,
+    span: 'third',
+    caption: {
+      sv: 'Tidiga koncept med cirkelformen och en alternativ "&" variant.',
+      en: 'Early concepts using the circle mark and an alternative "&" variant.',
+    },
+  },
+  {
+    src: project1LogoConcept2,
+    span: 'third',
+    caption: {
+      sv: 'Konceptvariant med stapeldiagram som visualiserar tillväxt.',
+      en: 'Concept variant using a bar-chart mark to visualize growth.',
+    },
+  },
+  {
+    src: project1LogoConcept3,
+    span: 'third',
+    caption: {
+      sv: 'Ytterligare en variant av stapeldiagram-konceptet.',
+      en: 'Another variation of the bar-chart concept.',
+    },
+  },
 ]
 
 const project1DefineStep = {
@@ -165,12 +203,99 @@ const project1DefineStep = {
 }
 
 const project1StepOverrides = {
-  understand: { ...project1UnderstandStep, image: project1UnderstandImage },
+  understand: {
+    ...project1UnderstandStep,
+    image: {
+      src: project1UnderstandImage,
+      caption: {
+        sv: 'Kartläggning av Melias varumärkesarkitektur och återkommande nyckelord från intervjun.',
+        en: 'Mapping of Melia’s brand architecture and recurring keywords from the interview.',
+      },
+    },
+  },
   explore: { ...project1ExploreStep, gallery: project1ExploreGallery },
   define: {
     ...project1DefineStep,
-    image: project1LogomarkFinal,
-    gallery: [{ src: project1ColorPalette, span: 'full' }],
+    gallery: [
+      {
+        src: project1LogomarkFinal,
+        caption: {
+          sv: 'Det slutgiltiga logomärket: cirkeln och den lutande, växande formen.',
+          en: 'The final logomark: the circle and the leaning, growing shape.',
+        },
+      },
+      {
+        src: project1ColorPalette,
+        caption: {
+          sv: 'Den slutgiltiga färgpaletten med primära och sekundära färger.',
+          en: 'The final color palette with primary and secondary colors.',
+        },
+      },
+    ],
+  },
+  develop: {
+    sv: {
+      subheading: 'Grafisk profil',
+      body: [
+        'När det visuella konceptet var på plats började jag utveckla hur identiteten skulle fungera i olika sammanhang. Jag tog därför fram ett flexibelt logotypsystem bestående av en primär logotyp, en sekundär logotyp och ett fristående logomärke, där varje variant fyllde en egen funktion.',
+        'Den primära logotypen är den centrala versionen av identiteten och består av logomärket placerat ovanför ordbilden. MELIA ADVISORY är satt i Poppins, där avståndet mellan bokstäverna har ökats för att skapa ett luftigare uttryck. PARTNER använder Merriweather för att skapa en kontrast mellan det moderna och det mer klassiska uttrycket. Den primära logotypen används framför allt i sammanhang där varumärket behöver synas tydligt och vara lätt att känna igen, exempelvis i presentationer, tryckt material och digitala kanaler.',
+        'Den sekundära logotypen är en liggande version av den primära logotypen, där logomärket och ordbilden placeras bredvid varandra och separeras med en tunn vertikal linje. Den togs fram för sammanhang där en mer horisontell layout fungerar bättre, exempelvis i sidhuvuden, digitala gränssnitt och andra ytor där den primära logotypen inte passar lika bra. På så sätt skapas flexibilitet utan att tappa kopplingen till den visuella identiteten.',
+        'Jag tog även fram ett fristående logomärke som bygger på symbolen i logotypen. Logomärket fungerar som en förenklad representation av varumärket och kan användas när den fullständiga logotypen inte får plats, exempelvis som ikon, i sociala medier eller i digitala gränssnitt. Trots sin enklare form är det en viktig del av identiteten och bidrar till igenkänning även när hela logotypen inte används.',
+        'För att göra identiteten användbar i olika sammanhang tog jag fram färgvarianter för både ljusa och mörka bakgrunder. Jag kompletterade även den primära färgpaletten med neutrala färger som ljusgrått, mellangrått, nästan svart och vitt. De neutrala färgerna används för att skapa variation, kontrast och hierarki i exempelvis bakgrunder, text och andra grafiska element.',
+        'Som en del av arbetet testade jag sedan identiteten i olika realistiska sammanhang, bland annat på visitkort, brevpapper, kontorsmaterial och en digital skärm. På den digitala skärmen kompletterades logotypen med ett grafiskt linjemönster mot en mörk bakgrund. Genom att testa identiteten i olika format kunde jag se hur de olika delarna fungerade tillsammans och säkerställa att uttrycket höll ihop både i tryck och digitalt.',
+      ],
+    },
+    en: {
+      subheading: 'Brand Guidelines',
+      body: [
+        'With the visual concept in place, I began developing how the identity would work across different contexts. I therefore created a flexible logotype system consisting of a primary logotype, a secondary logotype, and a standalone logomark, each variant serving its own function.',
+        'The primary logotype is the central version of the identity and consists of the logomark placed above the wordmark. MELIA ADVISORY is set in Poppins, with increased letter spacing to create a more airy expression. PARTNER uses Merriweather to create a contrast between the modern and the more classic expression. The primary logotype is mainly used in contexts where the brand needs to stand out clearly and be easily recognizable, for example in presentations, printed material, and digital channels.',
+        'The secondary logotype is a horizontal version of the primary logotype, where the logomark and wordmark are placed side by side and separated by a thin vertical line. It was developed for contexts where a more horizontal layout works better, for example in headers, digital interfaces, and other surfaces where the primary logotype doesn’t fit as well. This creates flexibility without losing the connection to the visual identity.',
+        'I also developed a standalone logomark based on the symbol in the logotype. The logomark works as a simplified representation of the brand and can be used when the full logotype doesn’t fit, for example as an icon, on social media, or in digital interfaces. Despite its simpler form, it’s an important part of the identity and contributes to recognition even when the full logotype isn’t used.',
+        'To make the identity usable across different contexts, I created color variants for both light and dark backgrounds. I also complemented the primary color palette with neutral colors such as light gray, mid gray, near-black, and white. The neutral colors are used to create variation, contrast, and hierarchy in, for example, backgrounds, text, and other graphic elements.',
+        'As part of the work, I then tested the identity in various realistic contexts, including business cards, letterhead, office materials, and a digital screen. On the digital screen, the logotype was complemented with a graphic line pattern against a dark background. By testing the identity across different formats, I could see how the different parts worked together and ensure the expression held together both in print and digitally.',
+      ],
+    },
+    gallery: [
+      {
+        src: project1TypographyHeadings,
+        caption: {
+          sv: 'Rubriker sätts i Poppins, från Light till Bold.',
+          en: 'Headings are set in Poppins, from Light to Bold.',
+        },
+      },
+      {
+        src: project1TypographyBody,
+        caption: {
+          sv: 'Brödtext sätts i Merriweather, för ett mer klassiskt uttryck.',
+          en: 'Body text is set in Merriweather, for a more classic expression.',
+        },
+      },
+      {
+        src: project1MarkColorVariants,
+        span: 'full',
+        caption: {
+          sv: 'Logomärket i sina färgvarianter, mot ljus och mörk bakgrund.',
+          en: 'The logomark in its color variants, against light and dark backgrounds.',
+        },
+      },
+      {
+        src: project1LogotypePrimaryVariants,
+        span: 'full',
+        caption: {
+          sv: 'Den primära logotypen i sina färgvarianter.',
+          en: 'The primary logotype in its color variants.',
+        },
+      },
+      {
+        src: project1LogotypeSecondaryVariants,
+        span: 'full',
+        caption: {
+          sv: 'Den sekundära, liggande logotypen i sina färgvarianter.',
+          en: 'The secondary, horizontal logotype in its color variants.',
+        },
+      },
+    ],
   },
 }
 
@@ -215,12 +340,12 @@ export const projects = [
     processIntro: project1ProcessIntro,
     extraSections: placeholderExtraSections(),
     sv: {
-      title: 'Projekt 1',
+      title: 'Från punkt till riktning',
       role: 'UX-designer',
       description: '',
     },
     en: {
-      title: 'Project 1',
+      title: 'From Dot to Direction',
       role: 'UX Designer',
       description: '',
     },
