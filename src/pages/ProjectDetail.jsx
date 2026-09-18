@@ -1,9 +1,23 @@
-import { useEffect } from 'react'
+import { Fragment, useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import BackToTop from '../components/BackToTop'
 import ProcessNav from '../components/ProcessNav'
 import { useLanguage } from '../context/LanguageContext'
 import { projects } from '../data/projects'
+
+// Ett stycke är antingen en vanlig sträng eller en lista med segment, där
+// { i: 'text' } markerar kursiv text — se t.ex. project1UnderstandStep i
+// src/data/projects.js.
+function renderParagraph(paragraph) {
+  if (typeof paragraph === 'string') return paragraph
+  return paragraph.map((segment, index) =>
+    typeof segment === 'string' ? (
+      <Fragment key={index}>{segment}</Fragment>
+    ) : (
+      <em key={index}>{segment.i}</em>
+    )
+  )
+}
 
 export default function ProjectDetail() {
   const { slug } = useParams()
@@ -70,7 +84,29 @@ export default function ProjectDetail() {
               return (
                 <section key={step.id} id={step.id} className="process-section">
                   <h3>{stepContent.heading}</h3>
-                  <p>{stepContent.body}</p>
+                  {stepContent.subheading && (
+                    <p className="process-subheading">{stepContent.subheading}</p>
+                  )}
+                  {(Array.isArray(stepContent.body) ? stepContent.body : [stepContent.body]).map(
+                    (paragraph, index) => (
+                      <p key={index}>{renderParagraph(paragraph)}</p>
+                    )
+                  )}
+                  {step.image && (
+                    <img src={step.image} alt="" className="process-section-image" />
+                  )}
+                  {step.gallery && (
+                    <div className="process-gallery">
+                      {step.gallery.map((item, index) => (
+                        <img
+                          key={index}
+                          src={item.src}
+                          alt=""
+                          className={`process-gallery-item${item.span === 'full' ? ' process-gallery-item--full' : ''}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </section>
               )
             })}
