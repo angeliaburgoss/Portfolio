@@ -56,6 +56,8 @@ export default function ProjectDetail() {
 
       {project.process?.length > 0 && (
         <>
+          <h2 className="process-title">{t.processHeading}</h2>
+
           <p className="process-intro">{project.processIntro[lang]}</p>
 
           <ProcessNav steps={project.process} />

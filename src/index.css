@@ -322,6 +322,10 @@ h2 {
   margin: 0;
 }
 
+.process-title {
+  font-size: 24px;
+}
+
 .process-intro {
   font-size: 16px;
   line-height: 1.7;
