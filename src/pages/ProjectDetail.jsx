@@ -159,7 +159,13 @@ export default function ProjectDetail() {
             return (
               <section key={extraSection.id} id={extraSection.id} className="extra-section">
                 <h2 className="process-title">{extraContent.heading}</h2>
-                <p className="process-intro">{extraContent.body}</p>
+                {(Array.isArray(extraContent.body) ? extraContent.body : [extraContent.body]).map(
+                  (paragraph, index) => (
+                    <p key={index} className="process-intro">
+                      {paragraph}
+                    </p>
+                  )
+                )}
               </section>
             )
           })}

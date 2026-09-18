@@ -15,6 +15,10 @@ import project1TypographyBody from '../assets/projects/project-1/typography-body
 import project1MarkColorVariants from '../assets/projects/project-1/mark-color-variants.png'
 import project1LogotypePrimaryVariants from '../assets/projects/project-1/logotype-primary-variants.png'
 import project1LogotypeSecondaryVariants from '../assets/projects/project-1/logotype-secondary-variants.png'
+import project1BrandManualCover from '../assets/projects/project-1/brand-manual-cover.png'
+import project1DigitalScreenMockup from '../assets/projects/project-1/digital-screen-mockup.png'
+import project1BusinessCardMockup from '../assets/projects/project-1/business-card-mockup.png'
+import project1StationeryMockup from '../assets/projects/project-1/stationery-mockup.png'
 import { processSteps } from './processSteps'
 
 // Kort platshållartext per steg — talar om vad avsnittet ska handla om.
@@ -36,8 +40,8 @@ const stepPlaceholders = {
 function placeholderProcess() {
   return processSteps.map((step) => ({
     id: step.id,
-    sv: { heading: `${step.number} — ${step.sv}`, body: stepPlaceholders[step.id].sv },
-    en: { heading: `${step.number} — ${step.en}`, body: stepPlaceholders[step.id].en },
+    sv: { heading: `${step.number}. ${step.sv}`, body: stepPlaceholders[step.id].sv },
+    en: { heading: `${step.number}. ${step.en}`, body: stepPlaceholders[step.id].en },
   }))
 }
 
@@ -54,7 +58,7 @@ const project1ProcessIntro = {
 
 const project1UnderstandStep = {
   sv: {
-    heading: '01 — Förstå',
+    heading: '01. Förstå',
     subheading: 'Förståelse & målbild',
     body: [
       'Jag inledde processen med en intervju med VD för Melia Ekonomi & Juridik för att förstå visionen för det nya bolaget och vad det skulle förmedla till sina kunder.',
@@ -83,7 +87,7 @@ const project1UnderstandStep = {
     ],
   },
   en: {
-    heading: '01 — Understand',
+    heading: '01. Understand',
     subheading: 'Insight & Vision',
     body: [
       'I began the process with an interview with the CEO of Melia Ekonomi & Juridik to understand the vision for the new company and what it should convey to its clients.',
@@ -115,7 +119,7 @@ const project1UnderstandStep = {
 
 const project1ExploreStep = {
   sv: {
-    heading: '02 — Utforska',
+    heading: '02. Utforska',
     subheading: 'Idé & koncept',
     body: [
       'Utifrån nyckelorden började jag fundera på hur jag visuellt kunde förmedla känslan av något som växer och samtidigt behålla kopplingen till Melia.',
@@ -126,7 +130,7 @@ const project1ExploreStep = {
     ],
   },
   en: {
-    heading: '02 — Explore',
+    heading: '02. Explore',
     subheading: 'Idea & Concept',
     body: [
       'Based on the keywords, I started thinking about how to visually convey the feeling of something growing, while still keeping the connection to Melia.',
@@ -183,10 +187,10 @@ const project1DefineStep = {
   sv: {
     subheading: 'Visuellt koncept',
     body: [
-      'Det slutliga konceptet utvecklades till ett logomärke bestående av två former: en cirkel och en avlång, rundad form som lutar uppåt. Cirkeln bygger vidare på punkten i Melia., medan den avlånga formen representerar samma punkt i en växande och framåtriktad form. Tillsammans skapar formerna en känsla av tillväxt, utveckling och strategisk riktning.',
+      'Det slutliga konceptet utvecklades till en logosymbol bestående av två former: en cirkel och en avlång, rundad form som lutar uppåt. Cirkeln bygger vidare på punkten i Melia., medan den avlånga formen representerar samma punkt i en växande och framåtriktad form. Tillsammans skapar formerna en känsla av tillväxt, utveckling och strategisk riktning.',
       'Jag valde att arbeta med rundade former för att skapa ett mer tillgängligt och mänskligt uttryck. Den uppåtgående formen tillför samtidigt rörelse och en känsla av framåtanda, vilket passade bra med den rådgivande och utvecklingsinriktade roll som Melia Advisory Partner skulle ha.',
       'I färgpaletten valde jag att kombinera en mörkgrön primärfärg med Melias befintliga orange/gula färg. Den mörkgröna färgen gav det nya bolaget en egen identitet och bidrog med en känsla av stabilitet och förtroende, medan den orange färgen skapade kopplingen till moderbolaget och tillförde energi och kontrast.',
-      'Även typografin valdes för att skapa en balans mellan det moderna och det mer klassiska. Poppins används i rubriker och ordbilden, där de geometriska och rundade formerna samspelar med logomärket. Merriweather används i brödtext och för ordet PARTNER i logotypen. Serif-typsnittet ger ett mer klassiskt och seriöst uttryck, vilket passar den rådgivande verksamheten.',
+      'Även typografin valdes för att skapa en balans mellan det moderna och det mer klassiska. Poppins används i rubriker och ordbilden, där de geometriska och rundade formerna samspelar med logosymbolen. Merriweather används i brödtext och för ordet PARTNER i logotypen. Serif-typsnittet ger ett mer klassiskt och seriöst uttryck, vilket passar den rådgivande verksamheten.',
       'Tillsammans skapade dessa delar en visuell identitet som känns modern och tydlig, men samtidigt professionell och förtroendeingivande.',
     ],
   },
@@ -220,7 +224,7 @@ const project1StepOverrides = {
       {
         src: project1LogomarkFinal,
         caption: {
-          sv: 'Det slutgiltiga logomärket: cirkeln och den lutande, växande formen.',
+          sv: 'Den slutgiltiga logosymbolen: cirkeln och den lutande, växande formen.',
           en: 'The final logomark: the circle and the leaning, growing shape.',
         },
       },
@@ -237,10 +241,10 @@ const project1StepOverrides = {
     sv: {
       subheading: 'Grafisk profil',
       body: [
-        'När det visuella konceptet var på plats började jag utveckla hur identiteten skulle fungera i olika sammanhang. Jag tog därför fram ett flexibelt logotypsystem bestående av en primär logotyp, en sekundär logotyp och ett fristående logomärke, där varje variant fyllde en egen funktion.',
-        'Den primära logotypen är den centrala versionen av identiteten och består av logomärket placerat ovanför ordbilden. MELIA ADVISORY är satt i Poppins, där avståndet mellan bokstäverna har ökats för att skapa ett luftigare uttryck. PARTNER använder Merriweather för att skapa en kontrast mellan det moderna och det mer klassiska uttrycket. Den primära logotypen används framför allt i sammanhang där varumärket behöver synas tydligt och vara lätt att känna igen, exempelvis i presentationer, tryckt material och digitala kanaler.',
-        'Den sekundära logotypen är en liggande version av den primära logotypen, där logomärket och ordbilden placeras bredvid varandra och separeras med en tunn vertikal linje. Den togs fram för sammanhang där en mer horisontell layout fungerar bättre, exempelvis i sidhuvuden, digitala gränssnitt och andra ytor där den primära logotypen inte passar lika bra. På så sätt skapas flexibilitet utan att tappa kopplingen till den visuella identiteten.',
-        'Jag tog även fram ett fristående logomärke som bygger på symbolen i logotypen. Logomärket fungerar som en förenklad representation av varumärket och kan användas när den fullständiga logotypen inte får plats, exempelvis som ikon, i sociala medier eller i digitala gränssnitt. Trots sin enklare form är det en viktig del av identiteten och bidrar till igenkänning även när hela logotypen inte används.',
+        'När det visuella konceptet var på plats började jag utveckla hur identiteten skulle fungera i olika sammanhang. Jag tog därför fram ett flexibelt logotypsystem bestående av en primär logotyp, en sekundär logotyp och en fristående logosymbol, där varje variant fyllde en egen funktion.',
+        'Den primära logotypen är den centrala versionen av identiteten och består av logosymbolen placerad ovanför ordbilden. MELIA ADVISORY är satt i Poppins, där avståndet mellan bokstäverna har ökats för att skapa ett luftigare uttryck. PARTNER använder Merriweather för att skapa en kontrast mellan det moderna och det mer klassiska uttrycket. Den primära logotypen används framför allt i sammanhang där varumärket behöver synas tydligt och vara lätt att känna igen, exempelvis i presentationer, tryckt material och digitala kanaler.',
+        'Den sekundära logotypen är en liggande version av den primära logotypen, där logosymbolen och ordbilden placeras bredvid varandra och separeras med en tunn vertikal linje. Den togs fram för sammanhang där en mer horisontell layout fungerar bättre, exempelvis i sidhuvuden, digitala gränssnitt och andra ytor där den primära logotypen inte passar lika bra. På så sätt skapas flexibilitet utan att tappa kopplingen till den visuella identiteten.',
+        'Jag tog även fram en fristående logosymbol som bygger på symbolen i logotypen. Logosymbolen fungerar som en förenklad representation av varumärket och kan användas när den fullständiga logotypen inte får plats, exempelvis som ikon, i sociala medier eller i digitala gränssnitt. Trots sin enklare form är det en viktig del av identiteten och bidrar till igenkänning även när hela logotypen inte används.',
         'För att göra identiteten användbar i olika sammanhang tog jag fram färgvarianter för både ljusa och mörka bakgrunder. Jag kompletterade även den primära färgpaletten med neutrala färger som ljusgrått, mellangrått, nästan svart och vitt. De neutrala färgerna används för att skapa variation, kontrast och hierarki i exempelvis bakgrunder, text och andra grafiska element.',
         'Som en del av arbetet testade jag sedan identiteten i olika realistiska sammanhang, bland annat på visitkort, brevpapper, kontorsmaterial och en digital skärm. På den digitala skärmen kompletterades logotypen med ett grafiskt linjemönster mot en mörk bakgrund. Genom att testa identiteten i olika format kunde jag se hur de olika delarna fungerade tillsammans och säkerställa att uttrycket höll ihop både i tryck och digitalt.',
       ],
@@ -275,7 +279,7 @@ const project1StepOverrides = {
         src: project1MarkColorVariants,
         span: 'full',
         caption: {
-          sv: 'Logomärket i sina färgvarianter, mot ljus och mörk bakgrund.',
+          sv: 'Logosymbolen i sina färgvarianter, mot ljus och mörk bakgrund.',
           en: 'The logomark in its color variants, against light and dark backgrounds.',
         },
       },
@@ -298,8 +302,52 @@ const project1StepOverrides = {
     ],
   },
   deliver: {
-    sv: { subheading: 'Färdig visuell identitet' },
-    en: { subheading: 'Final Visual Identity' },
+    sv: {
+      subheading: 'Färdig visuell identitet',
+      body: [
+        'Identiteten samlades i en visuell manual som fungerade som den slutliga leveransen. Manualen innehåller fem delar: visuell identitet, färger, typografi, logosymbol och logotyper. Här beskrivs bland annat syftet med de olika delarna, hur de ska användas och hur de tillsammans skapar ett konsekvent uttryck.',
+        'Jag formgav även manualen utifrån den nya identiteten, med den mörka grundtonen och gröna accenterna som återkommande visuella element. På så sätt blev manualen inte bara ett dokument med riktlinjer, utan också ett exempel på hur den visuella identiteten kan användas i praktiken.',
+        'Tanken var att skapa ett tydligt och användbart verktyg som gör det enkelt att arbeta konsekvent med varumärket, både internt och i samarbeten med externa parter.',
+      ],
+    },
+    en: {
+      subheading: 'Final Visual Identity',
+      body: [
+        'The identity was compiled into a visual brand manual that served as the final deliverable. The manual contains five sections: visual identity, colors, typography, logomark, and logotypes. It describes the purpose of each section, how they should be used, and how together they create a consistent expression.',
+        'I also designed the manual itself based on the new identity, using the dark base tone and green accents as recurring visual elements. This way, the manual became not just a document with guidelines, but also an example of how the visual identity can be applied in practice.',
+        'The idea was to create a clear and usable tool that makes it easy to work consistently with the brand, both internally and in collaborations with external parties.',
+      ],
+    },
+    gallery: [
+      {
+        src: project1BrandManualCover,
+        caption: {
+          sv: 'Omslaget till den visuella manualen, formgiven utifrån den nya identiteten.',
+          en: 'The cover of the visual brand manual, designed using the new identity.',
+        },
+      },
+      {
+        src: project1DigitalScreenMockup,
+        caption: {
+          sv: 'Logotypen tillämpad på en digital skärm med ett grafiskt linjemönster.',
+          en: 'The logotype applied on a digital screen with a graphic line pattern.',
+        },
+      },
+      {
+        src: project1BusinessCardMockup,
+        caption: {
+          sv: 'Identiteten testad på ett visitkort.',
+          en: 'The identity tested on a business card.',
+        },
+      },
+      {
+        src: project1StationeryMockup,
+        caption: {
+          sv: 'Identiteten testad på brevpapper och kontorsmaterial.',
+          en: 'The identity tested on letterhead and office materials.',
+        },
+      },
+    ],
   },
 }
 
@@ -323,6 +371,28 @@ function placeholderExtraSections() {
   ]
 }
 
+const project1ResultatBody = {
+  sv: [
+    'Resultatet blev en sammanhållen visuell identitet för Melia Advisory Partner med en egen karaktär, samtidigt som den behåller en tydlig koppling till Melia. Den gröna färgen och den nya symbolen ger identiteten ett eget uttryck, medan punkten och den orange accentfärgen skapar igenkänning och en naturlig koppling till moderbolaget.',
+    'Den slutliga leveransen bestod av olika logotypversioner, primär och sekundär logotyp samt en fristående symbol, tillsammans med färgpalett, typografi och en visuell manual med riktlinjer för hur identiteten ska användas.',
+  ],
+  en: [
+    'The result was a cohesive visual identity for Melia Advisory Partner with its own character, while still maintaining a clear connection to Melia. The green color and the new symbol give the identity its own expression, while the dot and the orange accent color create recognition and a natural connection to the parent company.',
+    'The final deliverable consisted of different logotype versions, a primary and secondary logotype, and a standalone symbol, together with a color palette, typography, and a visual manual with guidelines for how the identity should be used.',
+  ],
+}
+
+const project1ReflektionBody = {
+  sv: [
+    'En viktig lärdom från projektet var hur mycket den initiala förståelsen av verksamheten påverkar det visuella resultatet. Intervjun med VD gav mig konkreta ord och idéer att utgå från, men det var genom att testa olika visuella riktningar som jag kunde hitta det uttryck som faktiskt passade verksamheten.',
+    'Jag tyckte också att det var intressant att utgå från en befintlig del av Melias identitet, punkten, och utveckla den till något nytt. Det gjorde det möjligt att skapa en egen karaktär för Melia Advisory Partner samtidigt som kopplingen till moderbolaget fanns kvar. För mig blev projektet ett bra exempel på hur en visuell identitet kan utvecklas genom att kombinera befintliga element med nya idéer, snarare än att börja helt från noll.',
+  ],
+  en: [
+    'An important lesson from the project was how much the initial understanding of the business affects the visual outcome. The interview with the CEO gave me concrete words and ideas to build on, but it was through testing different visual directions that I was able to find the expression that actually suited the business.',
+    'I also found it interesting to start from an existing part of Melia’s identity, the dot, and develop it into something new. That made it possible to create its own character for Melia Advisory Partner while still keeping the connection to the parent company. For me, the project became a good example of how a visual identity can be developed by combining existing elements with new ideas, rather than starting completely from scratch.',
+  ],
+}
+
 // Platshållarprojekt — lägg till fler objekt i den här listan för att lägga
 // till nya projekt på sidan. Byt ut `image` mot en riktig bild när du har en.
 export const projects = [
@@ -342,7 +412,15 @@ export const projects = [
       }
     }),
     processIntro: project1ProcessIntro,
-    extraSections: placeholderExtraSections(),
+    extraSections: placeholderExtraSections().map((section) => {
+      const body = { resultat: project1ResultatBody, reflektion: project1ReflektionBody }[section.id]
+      if (!body) return section
+      return {
+        ...section,
+        sv: { ...section.sv, body: body.sv },
+        en: { ...section.en, body: body.en },
+      }
+    }),
     sv: {
       title: 'Från punkt till riktning',
       role: 'UX-designer',
