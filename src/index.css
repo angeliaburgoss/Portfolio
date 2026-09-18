@@ -444,16 +444,19 @@ h3 {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
+/* Bildgalleri för projektstegen — visar bilder två i rad som standard och
+   fylls på med fler rader vartefter fler bilder läggs till. Ange
+   `span: 'full'` på en galleribild (se t.ex. project1ExploreGallery i
+   src/data/projects.js) för en bred referensbild på egen rad. */
 .process-gallery {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 24px;
 }
 
 .process-gallery-item {
   display: block;
-  grid-column: span 2;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -463,13 +466,7 @@ h3 {
 }
 
 .process-gallery-item--full {
-  grid-column: span 6;
-  object-fit: contain;
-  background: #fff;
-}
-
-.process-gallery-item--half {
-  grid-column: span 3;
+  grid-column: 1 / -1;
   object-fit: contain;
   background: #fff;
 }
@@ -638,10 +635,6 @@ h3 {
 
   .process-gallery {
     grid-template-columns: 1fr;
-  }
-
-  .process-gallery-item {
-    grid-column: span 1;
   }
 
   .lightbox {

@@ -134,8 +134,8 @@ const project1ExploreStep = {
 }
 
 const project1ExploreGallery = [
-  { src: project1SketchExploration, span: 'half' },
-  { src: project1DotToMarkSteps, span: 'half' },
+  { src: project1SketchExploration },
+  { src: project1DotToMarkSteps },
   { src: project1LogoConcept1 },
   { src: project1LogoConcept2 },
   { src: project1LogoConcept3 },
