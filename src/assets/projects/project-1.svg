@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
-  <rect width="800" height="600" fill="#e9e9ec"/>
-  <line x1="0" y1="0" x2="800" y2="600" stroke="#d3d3d8" stroke-width="1.5"/>
-  <line x1="800" y1="0" x2="0" y2="600" stroke="#d3d3d8" stroke-width="1.5"/>
-  <circle cx="400" cy="300" r="34" fill="#e9e9ec" stroke="#c7c7cd" stroke-width="1.5"/>
-  <text x="400" y="311" font-family="system-ui, sans-serif" font-size="28" font-weight="700" fill="#863bff" text-anchor="middle">01</text>
-</svg>
