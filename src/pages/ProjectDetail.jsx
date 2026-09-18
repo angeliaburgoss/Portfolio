@@ -52,7 +52,7 @@ export default function ProjectDetail() {
         </div>
       </dl>
 
-      <p className="project-description">{content.description}</p>
+      {content.description && <p className="project-description">{content.description}</p>}
 
       {project.process?.length > 0 && (
         <>

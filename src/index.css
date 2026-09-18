@@ -317,6 +317,7 @@ h3 {
 }
 
 .project-description {
+  color: var(--text-h);
   font-size: 17px;
   line-height: 1.7;
   margin: 0;
@@ -326,10 +327,19 @@ h3 {
   font-size: 24px;
 }
 
+.project-description + .process-title {
+  margin-top: -16px;
+}
+
 .process-intro {
+  color: var(--text-h);
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
+}
+
+.process-intro + .process-nav {
+  margin-top: 16px;
 }
 
 .extra-section {
@@ -407,6 +417,7 @@ h3 {
 }
 
 .process-section p {
+  color: var(--text-h);
   font-size: 16px;
   line-height: 1.7;
   margin: 0;
