@@ -65,7 +65,7 @@ h3 {
 /* Sidebar */
 
 .sidebar {
-  flex: 0 0 340px;
+  flex: 0 0 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,27 +93,26 @@ h3 {
 }
 
 .brand-mark {
-  width: 64px;
-  height: 64px;
+  width: 44px;
+  height: 44px;
   object-fit: contain;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .site-name {
   display: block;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 800;
   line-height: 1.25;
   letter-spacing: -0.01em;
   text-transform: uppercase;
-  white-space: nowrap;
   color: var(--text-h);
 }
 
 .site-title {
   display: block;
   margin-top: 4px;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 500;
   color: var(--text);
 }
@@ -126,7 +125,7 @@ h3 {
 
 .nav-link {
   align-self: flex-start;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
@@ -157,7 +156,7 @@ h3 {
   gap: 6px;
   align-self: flex-start;
   font: inherit;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: var(--text);
@@ -174,7 +173,7 @@ h3 {
 }
 
 .lang-toggle svg {
-  font-size: 17px;
+  font-size: 15px;
 }
 
 .social-icons {
@@ -200,8 +199,8 @@ h3 {
 }
 
 .social-icons svg {
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
 /* Content */
@@ -486,7 +485,6 @@ h3 {
   }
 
   .sidebar {
-    flex: 1 1 auto;
     position: static;
     height: auto;
     flex-direction: row;
@@ -505,7 +503,7 @@ h3 {
   }
 
   .site-name {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .content {
