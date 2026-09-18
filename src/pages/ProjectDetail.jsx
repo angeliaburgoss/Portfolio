@@ -60,6 +60,8 @@ export default function ProjectDetail() {
 
           <p className="process-intro">{project.processIntro[lang]}</p>
 
+          <h2 className="process-title">{t.designProcessHeading}</h2>
+
           <ProcessNav steps={project.process} />
 
           <div className="process-sections">
@@ -67,7 +69,7 @@ export default function ProjectDetail() {
               const stepContent = step[lang]
               return (
                 <section key={step.id} id={step.id} className="process-section">
-                  <h2>{stepContent.heading}</h2>
+                  <h3>{stepContent.heading}</h3>
                   <p>{stepContent.body}</p>
                 </section>
               )

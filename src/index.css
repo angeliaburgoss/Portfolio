@@ -45,7 +45,8 @@ a {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: var(--text-h);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -395,7 +396,8 @@ h2 {
   padding-top: 8px;
 }
 
-.process-section h2 {
+.process-section h2,
+.process-section h3 {
   font-size: 22px;
   text-align: left;
   margin-bottom: 10px;
