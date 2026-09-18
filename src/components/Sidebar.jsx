@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
 import { MdTranslate } from 'react-icons/md'
@@ -9,14 +9,29 @@ function navLinkClass({ isActive }) {
   return isActive ? 'nav-link active' : 'nav-link'
 }
 
+const nameWords = social.name.split(' ')
+const nameFirstLine = nameWords.slice(0, -1).join(' ')
+const nameSecondLine = nameWords[nameWords.length - 1]
+
 export default function Sidebar() {
   const { t, lang, toggleLang } = useLanguage()
+  const { pathname } = useLocation()
+  const isProjectPage = pathname.startsWith('/projekt/')
+  const brandMark = `${import.meta.env.BASE_URL}${isProjectPage ? 'brand-mark-light.png' : 'brand-mark-dark.png'}`
 
   return (
     <header className="sidebar">
       <div className="sidebar-top">
-        <NavLink to="/" className="site-name">
-          {social.name}
+        <NavLink to="/" className="site-name-link">
+          <img src={brandMark} alt="" className="brand-mark" />
+          <span>
+            <span className="site-name">
+              {nameFirstLine}
+              <br />
+              {nameSecondLine}
+            </span>
+            <span className="site-title">{social.title}</span>
+          </span>
         </NavLink>
 
         <nav className="main-nav" aria-label={t.work}>

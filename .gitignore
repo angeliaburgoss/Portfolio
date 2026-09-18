@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Local session notes for Claude — never pushed to GitHub
+PROGRESS.local.md
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

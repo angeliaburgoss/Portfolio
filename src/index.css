@@ -1,22 +1,35 @@
 :root {
-  --text: #4a4750;
-  --text-h: #0a0a0c;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --tile-bg: #f4f3f5;
-  --accent: #863bff;
-  --accent-bg: rgba(134, 59, 255, 0.08);
+  --text: #fff;
+  --text-h: #fff;
+  --bg: #1e1e1e;
+  --border: #3a3a3a;
+  --tile-bg: #2a2a2a;
+  --accent: #b892ff;
+  --accent-bg: rgba(184, 146, 255, 0.12);
 
   --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
   font: 17px/1.55 var(--sans);
-  color-scheme: light;
+  color-scheme: dark;
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Individuella projektsidor har ett ljust tema — se App.jsx, som lägger
+   klassen på baserat på route (/projekt/:slug). */
+.layout.project-theme {
+  --text: #1e1e1e;
+  --text-h: #1e1e1e;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --tile-bg: #f4f3f5;
+  --accent: #863bff;
+  --accent-bg: rgba(134, 59, 255, 0.08);
+  color-scheme: light;
 }
 
 * {
@@ -32,7 +45,8 @@ a {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   color: var(--text-h);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -42,12 +56,16 @@ h2 {
 .layout {
   display: flex;
   min-height: 100vh;
+  background: var(--bg);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Sidebar */
 
 .sidebar {
-  flex: 0 0 280px;
+  flex: 0 0 350px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -66,6 +84,21 @@ h2 {
   gap: 40px;
 }
 
+.site-name-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .site-name {
   display: block;
   font-size: 22px;
@@ -74,7 +107,14 @@ h2 {
   letter-spacing: -0.01em;
   text-transform: uppercase;
   color: var(--text-h);
-  text-decoration: none;
+}
+
+.site-title {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
 }
 
 .main-nav {
@@ -217,7 +257,8 @@ h2 {
 /* Project detail */
 
 .project-detail {
-  max-width: 720px;
+  max-width: 960px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -236,7 +277,9 @@ h2 {
 }
 
 .project-detail-image {
-  width: 100%;
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   background: var(--tile-bg);
@@ -244,6 +287,7 @@ h2 {
 
 .project-detail h1 {
   font-size: 32px;
+  text-align: center;
 }
 
 .project-meta {
@@ -276,6 +320,115 @@ h2 {
   font-size: 17px;
   line-height: 1.7;
   margin: 0;
+}
+
+.process-title {
+  font-size: 24px;
+}
+
+.process-intro {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.extra-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Design process nav ("bollarna") */
+
+.process-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 8px 0 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.process-ball {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 84px;
+  font: inherit;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.process-ball-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22px;
+  background: #a6a6a6;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.process-ball:hover .process-ball-circle,
+.process-ball:focus-visible .process-ball-circle {
+  transform: translateY(-2px);
+  background: #8f8f8f;
+}
+
+.process-ball-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+/* Design process sections */
+
+.process-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 8px;
+}
+
+.process-section h3 {
+  font-size: 22px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.process-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.back-to-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  align-self: center;
+  margin-top: 16px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  color: var(--accent);
 }
 
 /* Contact page */
