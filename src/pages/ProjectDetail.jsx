@@ -74,17 +74,17 @@ export default function ProjectDetail() {
                 </section>
               )
             })}
-
-            {project.extraSections?.map((extraSection) => {
-              const extraContent = extraSection[lang]
-              return (
-                <section key={extraSection.id} id={extraSection.id} className="process-section">
-                  <h2>{extraContent.heading}</h2>
-                  <p>{extraContent.body}</p>
-                </section>
-              )
-            })}
           </div>
+
+          {project.extraSections?.map((extraSection) => {
+            const extraContent = extraSection[lang]
+            return (
+              <section key={extraSection.id} id={extraSection.id} className="extra-section">
+                <h2 className="process-title">{extraContent.heading}</h2>
+                <p className="process-intro">{extraContent.body}</p>
+              </section>
+            )
+          })}
 
           <BackToTop />
         </>
