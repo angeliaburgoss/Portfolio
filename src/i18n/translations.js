@@ -18,6 +18,8 @@ export const translations = {
     languageToggleLabel: 'Switch language to English',
     projectNotFound: 'Projektet kunde inte hittas.',
     imagePlaceholderNote: 'Platshållarbild',
+    enlargeImage: 'Förstora bild',
+    closeLightbox: 'Stäng',
   },
   en: {
     work: 'Work',
@@ -38,5 +40,7 @@ export const translations = {
     languageToggleLabel: 'Byt språk till svenska',
     projectNotFound: 'Project could not be found.',
     imagePlaceholderNote: 'Placeholder image',
+    enlargeImage: 'Enlarge image',
+    closeLightbox: 'Close',
   },
 }

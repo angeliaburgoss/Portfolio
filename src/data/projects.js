@@ -8,6 +8,8 @@ import project1DotToMarkSteps from '../assets/projects/project-1/dot-to-mark-ste
 import project1LogoConcept1 from '../assets/projects/project-1/logo-concept-1.png'
 import project1LogoConcept2 from '../assets/projects/project-1/logo-concept-2.png'
 import project1LogoConcept3 from '../assets/projects/project-1/logo-concept-3.png'
+import project1LogomarkFinal from '../assets/projects/project-1/logomark-final.png'
+import project1ColorPalette from '../assets/projects/project-1/color-palette.png'
 import { processSteps } from './processSteps'
 
 // Kort platshållartext per steg — talar om vad avsnittet ska handla om.
@@ -50,7 +52,7 @@ const project1UnderstandStep = {
     heading: '01 — Förstå',
     subheading: 'Förståelse & målbild',
     body: [
-      'Jag började arbetet med en intervju med VD för Melia Ekonomi & Juridik för att få en tydligare bild av vad det nya bolaget skulle stå för och vilken roll det skulle ha gentemot kunderna.',
+      'Jag inledde processen med en intervju med VD för Melia Ekonomi & Juridik för att förstå visionen för det nya bolaget och vad det skulle förmedla till sina kunder.',
       [
         'Under samtalet identifierade jag några återkommande ord och idéer, bland annat ',
         { i: 'tillväxt' },
@@ -79,7 +81,7 @@ const project1UnderstandStep = {
     heading: '01 — Understand',
     subheading: 'Insight & Vision',
     body: [
-      'I began the work with an interview with the CEO of Melia Ekonomi & Juridik, to get a clearer picture of what the new company should stand for and what role it should play towards its clients.',
+      'I began the process with an interview with the CEO of Melia Ekonomi & Juridik to understand the vision for the new company and what it should convey to its clients.',
       [
         'During the conversation I identified some recurring words and ideas, among them ',
         { i: 'growth' },
@@ -132,16 +134,44 @@ const project1ExploreStep = {
 }
 
 const project1ExploreGallery = [
-  { src: project1SketchExploration, span: 'full' },
-  { src: project1DotToMarkSteps, span: 'full' },
+  { src: project1SketchExploration, span: 'half' },
+  { src: project1DotToMarkSteps, span: 'half' },
   { src: project1LogoConcept1 },
   { src: project1LogoConcept2 },
   { src: project1LogoConcept3 },
 ]
 
+const project1DefineStep = {
+  sv: {
+    subheading: 'Visuellt koncept',
+    body: [
+      'Det slutliga konceptet utvecklades till ett logomärke bestående av två former: en cirkel och en avlång, rundad form som lutar uppåt. Cirkeln bygger vidare på punkten i Melia., medan den avlånga formen representerar samma punkt i en växande och framåtriktad form. Tillsammans skapar formerna en känsla av tillväxt, utveckling och strategisk riktning.',
+      'Jag valde att arbeta med rundade former för att skapa ett mer tillgängligt och mänskligt uttryck. Den uppåtgående formen tillför samtidigt rörelse och en känsla av framåtanda, vilket passade bra med den rådgivande och utvecklingsinriktade roll som Melia Advisory Partner skulle ha.',
+      'I färgpaletten valde jag att kombinera en mörkgrön primärfärg med Melias befintliga orange/gula färg. Den mörkgröna färgen gav det nya bolaget en egen identitet och bidrog med en känsla av stabilitet och förtroende, medan den orange färgen skapade kopplingen till moderbolaget och tillförde energi och kontrast.',
+      'Även typografin valdes för att skapa en balans mellan det moderna och det mer klassiska. Poppins används i rubriker och ordbilden, där de geometriska och rundade formerna samspelar med logomärket. Merriweather används i brödtext och för ordet PARTNER i logotypen. Serif-typsnittet ger ett mer klassiskt och seriöst uttryck, vilket passar den rådgivande verksamheten.',
+      'Tillsammans skapade dessa delar en visuell identitet som känns modern och tydlig, men samtidigt professionell och förtroendeingivande.',
+    ],
+  },
+  en: {
+    subheading: 'Visual Concept',
+    body: [
+      'The final concept developed into a logomark consisting of two shapes: a circle and an elongated, rounded form leaning upward. The circle builds on the dot in Melia., while the elongated shape represents the same dot in a growing, forward-leaning form. Together, the shapes create a sense of growth, development, and strategic direction.',
+      'I chose to work with rounded shapes to create a more approachable and human expression. The upward-leaning shape also adds movement and a sense of forward momentum, which fit well with the advisory, development-focused role Melia Advisory Partner would have.',
+      'For the color palette, I chose to combine a dark green primary color with Melia’s existing orange/yellow color. The dark green gave the new company its own identity and contributed a sense of stability and trust, while the orange color created the connection to the parent company and added energy and contrast.',
+      'The typography was also chosen to create a balance between the modern and the more classic. Poppins is used in headings and the wordmark, where the geometric, rounded shapes interact with the logomark. Merriweather is used in body text and for the word PARTNER in the logotype. The serif typeface gives a more classic and serious expression, which suits the advisory business.',
+      'Together, these elements created a visual identity that feels modern and clear, yet at the same time professional and trustworthy.',
+    ],
+  },
+}
+
 const project1StepOverrides = {
   understand: { ...project1UnderstandStep, image: project1UnderstandImage },
   explore: { ...project1ExploreStep, gallery: project1ExploreGallery },
+  define: {
+    ...project1DefineStep,
+    image: project1LogomarkFinal,
+    gallery: [{ src: project1ColorPalette, span: 'full' }],
+  },
 }
 
 // Avslutande avsnitt efter designprocessen — visas INTE som egna bollar i
@@ -174,7 +204,13 @@ export const projects = [
     tools: ['Canva', 'Miro', 'Figma', 'Adobe Illustrator'],
     process: placeholderProcess().map((step) => {
       const override = project1StepOverrides[step.id]
-      return override ? { ...step, ...override } : step
+      if (!override) return step
+      return {
+        ...step,
+        ...override,
+        sv: { ...step.sv, ...override.sv },
+        en: { ...step.en, ...override.en },
+      }
     }),
     processIntro: project1ProcessIntro,
     extraSections: placeholderExtraSections(),

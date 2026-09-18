@@ -1,6 +1,7 @@
-import { Fragment, useEffect } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import BackToTop from '../components/BackToTop'
+import Lightbox from '../components/Lightbox'
 import ProcessNav from '../components/ProcessNav'
 import { useLanguage } from '../context/LanguageContext'
 import { projects } from '../data/projects'
@@ -23,6 +24,7 @@ export default function ProjectDetail() {
   const { slug } = useParams()
   const { t, lang } = useLanguage()
   const project = projects.find((item) => item.slug === slug)
+  const [lightboxSrc, setLightboxSrc] = useState(null)
 
   useEffect(() => {
     window.scrollTo({ top: 0 })
@@ -41,13 +43,33 @@ export default function ProjectDetail() {
 
   const content = project[lang]
 
+  function zoomableImageProps(src) {
+    return {
+      onClick: () => setLightboxSrc(src),
+      onKeyDown: (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault()
+          setLightboxSrc(src)
+        }
+      },
+      role: 'button',
+      tabIndex: 0,
+      'aria-label': t.enlargeImage,
+    }
+  }
+
   return (
     <article className="project-detail">
       <Link to="/" className="back-link">
         {t.backToWork}
       </Link>
 
-      <img src={project.image} alt="" className="project-detail-image" />
+      <img
+        src={project.image}
+        alt=""
+        className="project-detail-image zoomable-image"
+        {...zoomableImageProps(project.image)}
+      />
 
       <h1>{content.title}</h1>
 
@@ -93,7 +115,12 @@ export default function ProjectDetail() {
                     )
                   )}
                   {step.image && (
-                    <img src={step.image} alt="" className="process-section-image" />
+                    <img
+                      src={step.image}
+                      alt=""
+                      className="process-section-image zoomable-image"
+                      {...zoomableImageProps(step.image)}
+                    />
                   )}
                   {step.gallery && (
                     <div className="process-gallery">
@@ -102,7 +129,8 @@ export default function ProjectDetail() {
                           key={index}
                           src={item.src}
                           alt=""
-                          className={`process-gallery-item${item.span === 'full' ? ' process-gallery-item--full' : ''}`}
+                          className={`process-gallery-item zoomable-image${item.span ? ` process-gallery-item--${item.span}` : ''}`}
+                          {...zoomableImageProps(item.src)}
                         />
                       ))}
                     </div>
@@ -125,6 +153,8 @@ export default function ProjectDetail() {
           <BackToTop />
         </>
       )}
+
+      <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
     </article>
   )
 }
