@@ -364,10 +364,9 @@ h3 {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  border: 3px solid var(--ball-color);
-  color: var(--ball-color);
+  color: #fff;
   font-size: 22px;
-  background: color-mix(in srgb, var(--ball-color) 6%, var(--bg));
+  background: #a6a6a6;
   transition:
     transform 0.15s ease,
     background 0.15s ease;
@@ -376,7 +375,7 @@ h3 {
 .process-ball:hover .process-ball-circle,
 .process-ball:focus-visible .process-ball-circle {
   transform: translateY(-2px);
-  background: color-mix(in srgb, var(--ball-color) 16%, var(--bg));
+  background: #8f8f8f;
 }
 
 .process-ball-label {

@@ -22,7 +22,6 @@ export default function ProcessNav({ steps }) {
             key={step.id}
             type="button"
             className="process-ball"
-            style={{ '--ball-color': step.color }}
             onClick={() => scrollToSection(step.id)}
           >
             <span className="process-ball-circle">

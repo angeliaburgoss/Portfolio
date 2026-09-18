@@ -60,9 +60,9 @@ export default function ProjectDetail() {
 
           <p className="process-intro">{project.processIntro[lang]}</p>
 
-          <h2 className="process-title">{t.designProcessHeading}</h2>
-
           <ProcessNav steps={project.process} />
+
+          <h2 className="process-title">{t.designProcessHeading}</h2>
 
           <div className="process-sections">
             {project.process.map((step) => {
